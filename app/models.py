@@ -9,9 +9,9 @@ class Usuario(models.Model):
         ["M", "Masculino"]
     ]
 
-    nome = models.CharField(max_length=20, null=False, verbose_name='Nome')
-    endereco = models.CharField(max_length=50)
-    telefone = models.CharField(max_length=10)
+    nome = models.CharField(max_length=50, null=False, verbose_name='Nome')
+    telefone = models.CharField(max_length=20)
+    endereco = models.CharField(max_length=10)
     email = models.EmailField(null=False)
     sexo = models.CharField(max_length=1, choices=SEXO_CHOICES)
 
@@ -23,7 +23,7 @@ class Usuario(models.Model):
         verbose_name_plural = ' Usuários'
 
 
-class SetorBanheiro(models.Moodel):
+class SetorBanheiro(models.Model):
     nome = models.CharField(max_length=20, null=False, verbose_name='Nome')
     descricao = models.CharField(max_length=50, verbose_name='Descrição')
     date = models.DateField(max_length=100, verbose_name='Data',null=True, auto_now=True)
@@ -51,6 +51,6 @@ class SetorAuditorio(models.Model):
     nome = models.CharField(max_length=20, null=False, verbose_name='Nome')
     descricao = models.CharField(max_length=50, verbose_name='Descrição')
     date = models.DateField(max_length=100, verbose_name='Data',null=True, auto_now=True)
-    
+
     def __str__(self):
         return self.name
