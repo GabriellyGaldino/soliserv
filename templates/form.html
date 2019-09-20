@@ -1,53 +1,55 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Formulário</title>
+    </head>
+    <body>
+        <!--link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+        <div class="container contact-form">
+            <div class="contact-image">
+                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
+            </div>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Cadastro</title>
-</head>
-
-<body>
-
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <div class="container contact-form">
-        <div class="contact-image">
-            <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
-        </div>
-        <form method="post">
-            <h3>Serviços Terceirizados</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="text" name="txtName" class="form-control" placeholder="Nome *" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="txtEmail" class="form-control" placeholder="Email *" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="txtPhone" class="form-control" placeholder="Telefone *" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="txtEnd" class="form-control" placeholder="Endereço *" value="" />
-                    </div>
-                    <p>
-                        <label for="id_sexo">Sexo:</label>
-                        <select name="sexo" required id="id_sexo">
-                            <option value selected>---selecione---</option>
-                            <option value="F">Feminino</option>
-                            <option value="M">Masculino</option>
-                        </select>
-                    </p>
-                    <div class="form-group">
-                        <input type="submit" name="btnSubmit" class="btnContact" value="Salvar" />
-                    </div>
+        <div>
+            <form>
+                <div>
+                    <label>Setor: </label>
+                        <option>Banheiro</option>
+                        <option>Sala de AUla</option>
+                        <option>Laboratório</option>
+                        <option>Auditório</option>
                 </div>
 
-            </div>
-        </form>
-    </div>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Salvar">
+                </form>-->
 
-</body>
+                <h1>Setores</h1>
+                <ul>
+                    <li><a href="{% url 'banheiro' %}">Banheiro</a></li>
+                    <li><a href="{% url 'laboratorio' %}">Laboratório</a></li>
+                    <li><a href="{% url 'sala' %}">Sala de Aula</a></li>
+                    <li><a href="{% url 'auditorio' %}">Auditório</a></li>
+                </ul>
+                <img src="banheiro.png" alt="">
+                <!-- <img href={% static "auditorio.jpeg" %} alt="Auditório"/>
+                <img href={% static "banheiro.png" %} alt="Banheiro"/>
+                <img href={% static "sala.jpg" %} alt="Sala"/>
+                <img href={% static "lab.png" %} alt="Laboratório"/> -->
+
+                <!--<div>
+                    <label>Data: </label>
+                    {{ Setor.data }}
+                </div>-->
+            </form>
+        </div>
+        
+    </body>
 </html>

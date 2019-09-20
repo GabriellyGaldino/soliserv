@@ -17,8 +17,20 @@ from django.contrib import admin
 from django.urls import path, include
 from app.views import *
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('servicos.urls')),
-    path('', views.cadastrar_usuario, name=''),
+    #path('admin/', admin.site.urls),
+    path('login/', login, name='login'),
+    path('', dashboard, name='dashboard'),
+    path('initial', initial, name='initial'),
+    path('initial/banheiro', banheiro, name= 'banheiro'),
+    path('initial/sala', sala, name= 'sala'),
+    path('initial/auditorio', auditorio, name= 'auditorio'),
+    path('initial/laboratorio', laboratorio, name= 'laboratorio')
 ]
+
+"""if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+"""

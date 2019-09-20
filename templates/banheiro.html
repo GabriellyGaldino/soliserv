@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Formulário</title>
+</head>
+<body>
+
+    <h1>Banheiros</h1>
+    <div>
+        <textarea name="descricao" cols="50" rows="5" id="descricao" placeholder="descrição"></textarea>
+    </div>
+    <div>
+        <label>Situação: </label>
+        <br>
+        <input type="radio" name="situacao" id="sujo" value="sujo" checked />
+        <label for="sujo">Sujo</label>
+        <br>
+        <input type="radio" name="situacao" id="faltaAgua" value="faltaagua"/>
+        <label for="faltaagua">Falta de água</label>
+        <br>
+        <input type="radio" name="situacao" id="canoEntupido" value="canoEntupido" />
+        <label for="canoEntpido">Encanação entupida</label>
+        <br>
+        <input type="radio" name="situacao" id="outro" value="outro" />
+        <label for="outro">Outro</label>
+    </div>
+    <div>
+        <button type="submit">Voltar</button>
+        <button type="submit" >Enviar</button>
+    </div>
+</body>
+</html>
